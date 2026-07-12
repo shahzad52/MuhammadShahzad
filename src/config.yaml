@@ -1,0 +1,42 @@
+site:
+  name: Muhammad Shahzad
+  site: 'https://shahzad-portfolio.vercel.app'
+  base: '/'
+  trailingSlash: false
+
+# Default SEO metadata
+metadata:
+  title:
+    default: Muhammad Shahzad | AI Automation & Data Engineer
+    template: '%s — Muhammad Shahzad'
+  description: "PUCIT Data Science graduate with 1.5+ years of professional experience building Python AI pipelines, BeautifulSoup scrapers, n8n automations, and full-stack web applications."
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    site_name: Muhammad Shahzad
+    images:
+      - url: '~/assets/images/default.png'
+        width: 1200
+        height: 628
+    type: website
+  twitter:
+    handle: '@Shahzad52'
+    site: '@Shahzad52'
+    cardType: summary_large_image
+
+i18n:
+  language: en
+  textDirection: ltr
+
+apps:
+  blog:
+    isEnabled: false
+
+analytics:
+  vendors:
+    googleAnalytics:
+      id: null
+
+ui:
+  theme: 'dark'

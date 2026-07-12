@@ -1,0 +1,529 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'Muhammad Shahzad — AI Automation & Data Engineer',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'View Projects',
+        href: '#projects',
+        icon: 'tabler:arrow-down',
+      },
+      {
+        text: 'WhatsApp Me',
+        href: 'https://wa.me/923223298705?text=Hi%20Muhammad,%20I%20saw%20your%20portfolio!',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      AI Automation & <br class="hidden md:inline" />
+      <span class="text-accent dark:text-blue-400">Data Engineering</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      PUCIT Data Science graduate with 1.5+ years of experience building resilient Python AI pipelines,
+       BeautifulSoup scrapers, n8n automations, Next.js apps, and Rails backends.
+      <br class="hidden md:inline" /> Based in Lahore — working globally.
+    </Fragment>
+
+    <Fragment slot="content">
+      <div class="mt-4 flex flex-wrap justify-center gap-2 max-w-lg mx-auto">
+        <span class="px-3 py-1 text-xs font-mono bg-blue-100 dark:bg-slate-800 text-blue-800 dark:text-blue-300 rounded-full border border-blue-200 dark:border-slate-700">Python</span>
+        <span class="px-3 py-1 text-xs font-mono bg-blue-100 dark:bg-slate-800 text-blue-800 dark:text-blue-300 rounded-full border border-blue-200 dark:border-slate-700">Next.js</span>
+        <span class="px-3 py-1 text-xs font-mono bg-blue-100 dark:bg-slate-800 text-blue-800 dark:text-blue-300 rounded-full border border-blue-200 dark:border-slate-700">n8n</span>
+        <span class="px-3 py-1 text-xs font-mono bg-blue-100 dark:bg-slate-800 text-blue-800 dark:text-blue-300 rounded-full border border-blue-200 dark:border-slate-700">Ruby on Rails</span>
+        <span class="px-3 py-1 text-xs font-mono bg-blue-100 dark:bg-slate-800 text-blue-800 dark:text-blue-300 rounded-full border border-blue-200 dark:border-slate-700">MongoDB</span>
+      </div>
+    </Fragment>
+  </Hero>
+
+  <!-- Stats Widget ****************** -->
+  <Stats
+    stats={[
+      { title: 'Years Experience', amount: '1.5+' },
+      { title: 'Price Sync Categories', amount: '40+' },
+      { title: 'Client Projects Shipped', amount: '5+' },
+      { title: 'B.S. Data Science, PUCIT', amount: '2025' },
+    ]}
+  />
+
+  <!-- About Section ***************** -->
+  <section id="about" class="py-16 md:py-24 bg-blue-50/30 dark:bg-slate-900/30 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div>
+          <p class="text-base text-accent dark:text-blue-400 font-bold tracking-wide uppercase">Background</p>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-heading mt-2 mb-6">About My Work</h2>
+          <div class="text-lg text-muted dark:text-slate-400 space-y-4">
+            <p>
+              I turn messy, manual workflows into clean, automated systems. My background in 
+              <strong>Data Science at PUCIT</strong> gave me a solid foundation in how ML models, 
+              embeddings, and classification actually work — not just how to call an API.
+            </p>
+            <p>
+              Day-to-day I build web apps with Next.js and Ruby on Rails, write scraping 
+              pipelines in Python (BeautifulSoup, Selenium), wire up n8n automations, 
+              and integrate AI layers using LangChain and vector databases.
+            </p>
+            <blockquote class="border-l-4 border-accent pl-4 italic text-slate-700 dark:text-slate-300 bg-accent/5 py-2 pr-2 rounded-r-md">
+              "Clean exception handling in scrapers, proper RAG context windows, functional 
+              AI flows that solve real problems — not demos that break in production."
+            </blockquote>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-gray-200 dark:border-slate-800 shadow-sm relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-blue-600 to-emerald-500"></div>
+          <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+            <span class="text-2xl">🎓</span> Education & Certifications
+          </h3>
+          <div class="space-y-6">
+            <div>
+              <h4 class="font-bold text-lg">Punjab University College of Information Technology (PUCIT)</h4>
+              <p class="text-accent dark:text-blue-400 font-medium">B.S. Data Science (2021 – 2025)</p>
+              <p class="text-muted dark:text-slate-400 text-sm mt-1">
+                Lahore, Pakistan · Supervised ML, Deep Learning, MLOps, NLP, Vector Embeddings, Database Architecture.
+              </p>
+            </div>
+            <hr class="border-gray-200 dark:border-slate-800" />
+            <ul class="space-y-3">
+              <li class="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
+                <span class="text-emerald-500 font-bold">✓</span> Supervised Machine Learning — Coursera
+              </li>
+              <li class="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
+                <span class="text-emerald-500 font-bold">✓</span> MLOps: MLflow & Hugging Face — Coursera
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Stack Widget ******** -->
+  <Features3
+    id="skills"
+    tagline="Capabilities"
+    title="Technical Stack"
+    subtitle="Tools I reach for regularly — not a keyword dump."
+    columns={2}
+    items={[
+      {
+        title: 'AI / ML & Python',
+        description: 'LangChain & RAG, BERT Classification, Hugging Face, Pinecone, TensorFlow, Scikit-Learn, OpenAI API, Llama models.',
+        icon: 'tabler:robot',
+      },
+      {
+        title: 'Web Scraping',
+        description: 'BeautifulSoup, Selenium, Price Sync scrapers, Anti-bot bypass, API reverse engineering, Cron automation, Data validation.',
+        icon: 'tabler:spider',
+      },
+      {
+        title: 'Web Engineering',
+        description: 'Next.js, React, Ruby on Rails, Flask, Django, PostgreSQL, MongoDB, Docker, Vercel optimization, Local SEO.',
+        icon: 'tabler:world',
+      },
+      {
+        title: 'Automation & Ops',
+        description: 'n8n orchestration, Webhook-driven pipelines, YouTube API integrations, Multi-agent workflows, GitHub Actions, Linux server admin.',
+        icon: 'tabler:settings',
+      },
+    ]}
+  />
+
+  <!-- Experience Timeline Widget **** -->
+  <Steps
+    id="experience"
+    title="Professional Experience"
+    items={[
+      {
+        title: 'AI Developer & Data Pipeline Engineer <br /> <span class="font-normal text-muted dark:text-slate-400">Software & Automation Engineering (2024 - Present)</span>',
+        description: `• Configured Pinecone vector indexes and Hugging Face embeddings for context-aware student search query matching.
+                      <br />• Wrote resilient BeautifulSoup and Selenium scrapers for JavaScript-heavy sites with automatic DOM-change recovery.
+                      <br />• Built daily automated price sync scrapers for 47 device categories, writing cleaned records directly to MongoDB.
+                      <br />• Designed n8n webhook workflows: YouTube video upload → automatic transcript fetch → Claude/GPT categorization → dashboard sync.
+                      <br />• Shipped high-performance responsive client websites for lawn care businesses with customized local SEO structures.`,
+        icon: 'tabler:briefcase',
+      },
+    ]}
+    classes={{ container: 'max-w-4xl scroll-mt-20' }}
+  />
+
+  <!-- Projects Grid Section ********* -->
+  <section id="projects" class="py-16 md:py-24 bg-blue-50/30 dark:bg-slate-900/30 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-base text-accent dark:text-blue-400 font-bold tracking-wide uppercase">Portfolio</p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-heading mt-2 mb-4">Selected Projects</h2>
+        <p class="text-xl text-muted dark:text-slate-400">Real builds — not toy demos.</p>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="flex flex-wrap justify-center gap-2 mb-10" id="project-filters">
+        <button class="px-4 py-1.5 rounded-full text-sm font-semibold border bg-blue-600 text-white border-blue-600" data-filter="all">All</button>
+        <button class="px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-200 dark:border-slate-800 hover:border-accent hover:text-accent dark:hover:text-blue-400" data-filter="ai-ml">AI/ML</button>
+        <button class="px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-200 dark:border-slate-800 hover:border-accent hover:text-accent dark:hover:text-blue-400" data-filter="web-scraping">Web Scraping</button>
+        <button class="px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-200 dark:border-slate-800 hover:border-accent hover:text-accent dark:hover:text-blue-400" data-filter="automation">Automation</button>
+        <button class="px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-200 dark:border-slate-800 hover:border-accent hover:text-accent dark:hover:text-blue-400" data-filter="full-stack-web">Full-Stack Web</button>
+      </div>
+
+      <!-- Grid -->
+      <div class="grid md:grid-cols-2 gap-8" id="project-grid">
+        <!-- Project 1 -->
+        <article class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 flex flex-col" data-cat="ai-ml">
+          <div class="h-40 bg-slate-100 dark:bg-slate-800 flex items-center justify-center border-b border-gray-200 dark:border-slate-800 relative">
+            <span class="text-5xl">⚖️</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">AI/ML</span>
+              <h3 class="text-xl font-bold mt-1 mb-2">FileIt</h3>
+              <p class="text-muted dark:text-slate-400 text-sm leading-relaxed mb-4">
+                Legal document NLP analyzer. Extracts entities from legal briefs, providing constitutional references via localized vector search. Flask + PostgreSQL backend.
+              </p>
+            </div>
+            <div>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                {['Flask', 'PostgreSQL', 'NLP', 'Spacy', 'Vector Search'].map(t => (
+                  <span class="px-2 py-0.5 text-xs font-mono bg-gray-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded">{t}</span>
+                ))}
+              </div>
+              <a href="https://github.com/Shahzad52" target="_blank" class="text-sm font-semibold text-accent dark:text-blue-400 inline-flex items-center gap-1 hover:underline">
+                View on GitHub →
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 flex flex-col" data-cat="web-scraping">
+          <div class="h-40 bg-slate-100 dark:bg-slate-800 flex items-center justify-center border-b border-gray-200 dark:border-slate-800 relative">
+            <span class="text-5xl">📱</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Web Scraping</span>
+              <h3 class="text-xl font-bold mt-1 mb-2">MobileOye Price Sync</h3>
+              <p class="text-muted dark:text-slate-400 text-sm leading-relaxed mb-4">
+                Automated daily price sync across 47 mobile categories in Pakistan. Script-based BeautifulSoup scrapers, MongoDB writes, and Vercel serverless logs.
+              </p>
+            </div>
+            <div>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                {['Next.js', 'MongoDB', 'Python', 'BeautifulSoup'].map(t => (
+                  <span class="px-2 py-0.5 text-xs font-mono bg-gray-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded">{t}</span>
+                ))}
+              </div>
+              <a href="https://github.com/Shahzad52" target="_blank" class="text-sm font-semibold text-accent dark:text-blue-400 inline-flex items-center gap-1 hover:underline">
+                View on GitHub →
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 flex flex-col" data-cat="automation">
+          <div class="h-40 bg-slate-100 dark:bg-slate-800 flex items-center justify-center border-b border-gray-200 dark:border-slate-800 relative">
+            <span class="text-5xl">⚙️</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Automation</span>
+              <h3 class="text-xl font-bold mt-1 mb-2">n8n YouTube Pipeline</h3>
+              <p class="text-muted dark:text-slate-400 text-sm leading-relaxed mb-4">
+                Webhook-driven n8n workflow: YouTube upload triggers raw transcript fetching, processed by a Claude/GPT agent to write structured summaries to web dashboards.
+              </p>
+            </div>
+            <div>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                {['n8n', 'Webhooks', 'YouTube API', 'AI Agents'].map(t => (
+                  <span class="px-2 py-0.5 text-xs font-mono bg-gray-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded">{t}</span>
+                ))}
+              </div>
+              <a href="https://github.com/Shahzad52" target="_blank" class="text-sm font-semibold text-accent dark:text-blue-400 inline-flex items-center gap-1 hover:underline">
+                View on GitHub →
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 flex flex-col" data-cat="full-stack-web">
+          <div class="h-40 bg-slate-100 dark:bg-slate-800 flex items-center justify-center border-b border-gray-200 dark:border-slate-800 relative">
+            <span class="text-5xl">🌿</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Full-Stack Web</span>
+              <h3 class="text-xl font-bold mt-1 mb-2">Lawn Care Websites</h3>
+              <p class="text-muted dark:text-slate-400 text-sm leading-relaxed mb-4">
+                Responsive service sites for local lawn care businesses. Core Web Vitals optimized, local SEO structured, with lead routing via secure email handlers.
+              </p>
+            </div>
+            <div>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                {['Next.js', 'React', 'Vercel', 'SEO'].map(t => (
+                  <span class="px-2 py-0.5 text-xs font-mono bg-gray-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded">{t}</span>
+                ))}
+              </div>
+              <a href="https://github.com/Shahzad52" target="_blank" class="text-sm font-semibold text-accent dark:text-blue-400 inline-flex items-center gap-1 hover:underline">
+                View on GitHub →
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Pipeline Flow ****** -->
+  <section id="pipeline" class="py-16 md:py-24 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-base text-accent dark:text-blue-400 font-bold tracking-wide uppercase">How I Work</p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-heading mt-2 mb-4">Pipeline Architecture</h2>
+        <p class="text-xl text-muted dark:text-slate-400">Click each stage to see how I wire automated data pipelines end-to-end.</p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-6 sm:p-10 shadow-sm">
+        <!-- Node Stepper -->
+        <div class="flex flex-wrap justify-center sm:justify-between items-center gap-4 mb-8">
+          <!-- Step 1 -->
+          <button class="flex flex-col items-center gap-2 focus:outline-none pipeline-step active group" data-step="trigger">
+            <div class="w-16 h-16 rounded-full flex items-center justify-center bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400 border-2 border-blue-600 dark:border-blue-400 shadow-md group-hover:scale-105 transition duration-200">
+              <span class="text-2xl">🔗</span>
+            </div>
+            <span class="text-xs font-bold text-slate-800 dark:text-white">Trigger</span>
+          </button>
+          
+          <div class="hidden sm:block flex-1 h-0.5 bg-gray-200 dark:bg-slate-800 mx-2"></div>
+
+          <!-- Step 2 -->
+          <button class="flex flex-col items-center gap-2 focus:outline-none pipeline-step group" data-step="scrape">
+            <div class="w-16 h-16 rounded-full flex items-center justify-center bg-gray-50 dark:bg-slate-900 text-slate-500 border-2 border-transparent group-hover:scale-105 transition duration-200">
+              <span class="text-2xl">🕷️</span>
+            </div>
+            <span class="text-xs font-bold text-slate-500 dark:text-slate-400">Scraper</span>
+          </button>
+
+          <div class="hidden sm:block flex-1 h-0.5 bg-gray-200 dark:bg-slate-800 mx-2"></div>
+
+          <!-- Step 3 -->
+          <button class="flex flex-col items-center gap-2 focus:outline-none pipeline-step group" data-step="ai">
+            <div class="w-16 h-16 rounded-full flex items-center justify-center bg-gray-50 dark:bg-slate-900 text-slate-500 border-2 border-transparent group-hover:scale-105 transition duration-200">
+              <span class="text-2xl">🤖</span>
+            </div>
+            <span class="text-xs font-bold text-slate-500 dark:text-slate-400">AI Model</span>
+          </button>
+
+          <div class="hidden sm:block flex-1 h-0.5 bg-gray-200 dark:bg-slate-800 mx-2"></div>
+
+          <!-- Step 4 -->
+          <button class="flex flex-col items-center gap-2 focus:outline-none pipeline-step group" data-step="db">
+            <div class="w-16 h-16 rounded-full flex items-center justify-center bg-gray-50 dark:bg-slate-900 text-slate-500 border-2 border-transparent group-hover:scale-105 transition duration-200">
+              <span class="text-2xl">🗄️</span>
+            </div>
+            <span class="text-xs font-bold text-slate-500 dark:text-slate-400">DB Sync</span>
+          </button>
+        </div>
+
+        <!-- Info Panel -->
+        <div class="bg-slate-50 dark:bg-slate-950 p-6 rounded-xl border border-gray-100 dark:border-slate-900 min-h-32">
+          <div id="step-title" class="text-lg font-bold text-accent dark:text-blue-400 mb-2">1. Webhook / Cron Trigger</div>
+          <p id="step-desc" class="text-muted dark:text-slate-400 leading-relaxed text-sm">
+            n8n monitors external events — YouTube uploads or scheduled crons. Once fired, it pulls raw metadata and boots the execution chain securely.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section *************** -->
+  <section id="contact" class="py-16 md:py-24 bg-blue-50/30 dark:bg-slate-900/30 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div>
+          <p class="text-base text-accent dark:text-blue-400 font-bold tracking-wide uppercase">Get In Touch</p>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-heading mt-2 mb-4">Let's Talk</h2>
+          <p class="text-lg text-muted dark:text-slate-400 mb-8">
+            Fastest reply via WhatsApp. Email works too. Drop a message and I'll respond within a few hours.
+          </p>
+
+          <div class="space-y-4">
+            <a href="https://wa.me/923223298705?text=Hi%20Muhammad,%20I%20saw%20your%20portfolio!" target="_blank" class="flex items-center gap-4 p-4 rounded-xl border border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-accent hover:shadow-sm transition">
+              <span class="text-3xl">💬</span>
+              <div>
+                <h4 class="text-xs uppercase font-bold text-slate-400">WhatsApp</h4>
+                <p class="font-bold text-slate-800 dark:text-white">+92 322 3298705</p>
+              </div>
+            </a>
+            <a href="mailto:imshahzad52@gmail.com?subject=Project Inquiry" class="flex items-center gap-4 p-4 rounded-xl border border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-accent hover:shadow-sm transition">
+              <span class="text-3xl">✉️</span>
+              <div>
+                <h4 class="text-xs uppercase font-bold text-slate-400">Email</h4>
+                <p class="font-bold text-slate-800 dark:text-white">imshahzad52@gmail.com</p>
+              </div>
+            </a>
+            <a href="https://github.com/Shahzad52" target="_blank" class="flex items-center gap-4 p-4 rounded-xl border border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-accent hover:shadow-sm transition">
+              <span class="text-3xl">🐙</span>
+              <div>
+                <h4 class="text-xs uppercase font-bold text-slate-400">GitHub</h4>
+                <p class="font-bold text-slate-800 dark:text-white">github.com/Shahzad52</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 p-8 rounded-2xl shadow-sm">
+          <h3 class="text-xl font-bold mb-6">Send a Message</h3>
+          <form id="contact-form" class="space-y-4">
+            <div id="form-toast" class="hidden p-4 rounded-lg text-sm mb-4"></div>
+            
+            <div>
+              <label class="block text-sm font-semibold mb-1 text-slate-700 dark:text-slate-300">Name</label>
+              <input type="text" id="name" required class="w-full px-4 py-2 border border-gray-200 dark:border-slate-800 rounded-lg bg-white dark:bg-slate-950 focus:outline-none focus:border-accent" placeholder="Your Name" />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold mb-1 text-slate-700 dark:text-slate-300">Email</label>
+              <input type="email" id="email" required class="w-full px-4 py-2 border border-gray-200 dark:border-slate-800 rounded-lg bg-white dark:bg-slate-950 focus:outline-none focus:border-accent" placeholder="your@email.com" />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold mb-1 text-slate-700 dark:text-slate-300">Message</label>
+              <textarea id="message" required rows="4" class="w-full px-4 py-2 border border-gray-200 dark:border-slate-800 rounded-lg bg-white dark:bg-slate-950 focus:outline-none focus:border-accent" placeholder="What do you need built?"></textarea>
+            </div>
+            <button type="submit" class="w-full py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-hover transition shadow-sm">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Filter logic
+  const filterButtons = document.querySelectorAll('#project-filters button');
+  const projectCards = document.querySelectorAll('#project-grid article');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Toggle active class
+      filterButtons.forEach(b => {
+        b.classList.remove('bg-blue-600', 'text-white', 'border-blue-600');
+        b.classList.add('border-gray-200', 'dark:border-slate-800');
+      });
+      btn.classList.add('bg-blue-600', 'text-white', 'border-blue-600');
+      btn.classList.remove('border-gray-200', 'dark:border-slate-800');
+
+      const filterValue = btn.getAttribute('data-filter');
+
+      projectCards.forEach(card => {
+        const cat = card.getAttribute('data-cat');
+        if (filterValue === 'all' || cat === filterValue) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Pipeline Stepper logic
+  const steps = {
+    trigger: {
+      title: "1. Webhook / Cron Trigger",
+      desc: "n8n monitors external events — YouTube uploads or scheduled crons. Once fired, it pulls raw metadata and boots the execution chain securely."
+    },
+    scrape: {
+      title: "2. Clean Data Scraping",
+      desc: "A Python BeautifulSoup/Selenium worker fetches live web data — specs, prices, articles. It cleans and normalizes raw HTML while seamlessly bypasses basic bot-detection."
+    },
+    ai: {
+      title: "3. ML Classification & Embeddings",
+      desc: "BERT models classify difficulty/content. LangChain RAG chains fact-check context. Hugging Face embeddings are generated for semantic search."
+    },
+    db: {
+      title: "4. Database Sync",
+      desc: "Embeddings load into Pinecone for semantic search. Structured records sync to MongoDB and PostgreSQL, closing the automation loop cleanly."
+    }
+  };
+
+  const stepButtons = document.querySelectorAll('.pipeline-step');
+  const stepTitle = document.getElementById('step-title');
+  const stepDesc = document.getElementById('step-desc');
+
+  stepButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remove active classes
+      stepButtons.forEach(b => {
+        const innerCircle = b.querySelector('div');
+        const textSpan = b.querySelector('span:last-child');
+        innerCircle.classList.remove('bg-blue-50', 'dark:bg-slate-800', 'text-blue-600', 'dark:text-blue-400', 'border-blue-600', 'dark:border-blue-400', 'shadow-md');
+        innerCircle.classList.add('bg-gray-50', 'dark:bg-slate-900', 'text-slate-500', 'border-transparent');
+        textSpan.classList.remove('text-slate-800', 'dark:text-white');
+        textSpan.classList.add('text-slate-500', 'dark:text-slate-400');
+      });
+
+      // Add active class to clicked
+      const circle = btn.querySelector('div');
+      const text = btn.querySelector('span:last-child');
+      circle.classList.add('bg-blue-50', 'dark:bg-slate-800', 'text-blue-600', 'dark:text-blue-400', 'border-blue-600', 'dark:border-blue-400', 'shadow-md');
+      circle.classList.remove('bg-gray-50', 'dark:bg-slate-900', 'text-slate-500', 'border-transparent');
+      text.classList.add('text-slate-800', 'dark:text-white');
+      text.classList.remove('text-slate-500', 'dark:text-slate-400');
+
+      const stepKey = btn.getAttribute('data-step');
+      const data = steps[stepKey];
+      if (stepTitle && stepDesc && data) {
+        stepTitle.textContent = data.title;
+        stepDesc.textContent = data.desc;
+      }
+    });
+  });
+
+  // Contact Form Submission
+  const form = document.getElementById('contact-form');
+  const toast = document.getElementById('form-toast');
+
+  if (form && toast) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) {
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+      }
+
+      setTimeout(() => {
+        toast.className = 'p-4 rounded-lg text-sm mb-4 bg-emerald-100 text-emerald-800 border border-emerald-200 dark:bg-emerald-900/30 dark:text-emerald-300 dark:border-emerald-800';
+        toast.textContent = "Got it! I'll reach out via WhatsApp or email shortly.";
+        toast.classList.remove('hidden');
+
+        form.reset();
+        
+        if (submitBtn) {
+          submitBtn.textContent = 'Send Message';
+          submitBtn.disabled = false;
+        }
+      }, 1000);
+    });
+  }
+</script>
