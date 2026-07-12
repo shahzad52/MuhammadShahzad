@@ -3,9 +3,8 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Steps from '~/components/widgets/Steps.astro';
-import Content from '~/components/widgets/Content.astro';
 import Stats from '~/components/widgets/Stats.astro';
-import { getPermalink } from '~/utils/permalinks';
+import { Icon } from 'astro-icon/components';
 
 const metadata = {
   title: 'Muhammad Shahzad — AI Automation & Data Engineer',
@@ -24,21 +23,20 @@ const metadata = {
         icon: 'tabler:arrow-down',
       },
       {
-        text: 'WhatsApp Me',
-        href: 'https://wa.me/923223298705?text=Hi%20Muhammad,%20I%20saw%20your%20portfolio!',
+        text: 'Contact Me',
+        href: 'mailto:imshahzad52@gmail.com?subject=Project Inquiry',
         target: '_blank',
-        icon: 'tabler:brand-whatsapp',
+        icon: 'tabler:mail',
       },
     ]}
   >
     <Fragment slot="title">
-      AI Automation & <br class="hidden md:inline" />
-      <span class="text-accent dark:text-blue-400">Data Engineering</span>
+      <span id="typewriter-title" class="inline-block text-accent dark:text-blue-400 border-r-2 border-accent dark:border-blue-400 pr-1"></span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      PUCIT Data Science graduate with 1.5+ years of experience building resilient Python AI pipelines,
-       BeautifulSoup scrapers, n8n automations, Next.js apps, and Rails backends.
+      Data Scientist with 1.5+ years of experience building resilient Python AI pipelines,
+      robust data harvesting tools, workflow automation systems, and high-performance full-stack web applications.
       <br class="hidden md:inline" /> Based in Lahore — working globally.
     </Fragment>
 
@@ -46,7 +44,7 @@ const metadata = {
       <div class="mt-4 flex flex-wrap justify-center gap-2 max-w-lg mx-auto">
         <span class="px-3 py-1 text-xs font-mono bg-blue-100 dark:bg-slate-800 text-blue-800 dark:text-blue-300 rounded-full border border-blue-200 dark:border-slate-700">Python</span>
         <span class="px-3 py-1 text-xs font-mono bg-blue-100 dark:bg-slate-800 text-blue-800 dark:text-blue-300 rounded-full border border-blue-200 dark:border-slate-700">Next.js</span>
-        <span class="px-3 py-1 text-xs font-mono bg-blue-100 dark:bg-slate-800 text-blue-800 dark:text-blue-300 rounded-full border border-blue-200 dark:border-slate-700">n8n</span>
+        <span class="px-3 py-1 text-xs font-mono bg-blue-100 dark:bg-slate-800 text-blue-800 dark:text-blue-300 rounded-full border border-blue-200 dark:border-slate-700">Automation</span>
         <span class="px-3 py-1 text-xs font-mono bg-blue-100 dark:bg-slate-800 text-blue-800 dark:text-blue-300 rounded-full border border-blue-200 dark:border-slate-700">Ruby on Rails</span>
         <span class="px-3 py-1 text-xs font-mono bg-blue-100 dark:bg-slate-800 text-blue-800 dark:text-blue-300 rounded-full border border-blue-200 dark:border-slate-700">MongoDB</span>
       </div>
@@ -59,7 +57,7 @@ const metadata = {
       { title: 'Years Experience', amount: '1.5+' },
       { title: 'Price Sync Categories', amount: '40+' },
       { title: 'Client Projects Shipped', amount: '5+' },
-      { title: 'B.S. Data Science, PUCIT', amount: '2025' },
+      { title: 'Role', amount: 'Data Scientist' },
     ]}
   />
 
@@ -73,13 +71,13 @@ const metadata = {
           <div class="text-lg text-muted dark:text-slate-400 space-y-4">
             <p>
               I turn messy, manual workflows into clean, automated systems. My background in 
-              <strong>Data Science at PUCIT</strong> gave me a solid foundation in how ML models, 
+              <strong>Data Science</strong> gave me a solid foundation in how ML models, 
               embeddings, and classification actually work — not just how to call an API.
             </p>
             <p>
-              Day-to-day I build web apps with Next.js and Ruby on Rails, write scraping 
-              pipelines in Python (BeautifulSoup, Selenium), wire up n8n automations, 
-              and integrate AI layers using LangChain and vector databases.
+              Day-to-day I build web apps with Next.js and Ruby on Rails, write robust data 
+              harvesting pipelines in Python, coordinate automated multi-agent workflow systems, 
+              and integrate AI layers using vector databases.
             </p>
             <blockquote class="border-l-4 border-accent pl-4 italic text-slate-700 dark:text-slate-300 bg-accent/5 py-2 pr-2 rounded-r-md">
               "Clean exception handling in scrapers, proper RAG context windows, functional 
@@ -91,12 +89,12 @@ const metadata = {
         <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-gray-200 dark:border-slate-800 shadow-sm relative overflow-hidden">
           <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-blue-600 to-emerald-500"></div>
           <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
-            <span class="text-2xl">🎓</span> Education & Certifications
+            <Icon name="tabler:school" class="w-6 h-6 text-accent dark:text-blue-400" /> Education & Certifications
           </h3>
           <div class="space-y-6">
             <div>
-              <h4 class="font-bold text-lg">Punjab University College of Information Technology (PUCIT)</h4>
-              <p class="text-accent dark:text-blue-400 font-medium">B.S. Data Science (2021 – 2025)</p>
+              <h4 class="font-bold text-lg">B.S. Data Science</h4>
+              <p class="text-accent dark:text-blue-400 font-medium">Graduated (2021 – 2025)</p>
               <p class="text-muted dark:text-slate-400 text-sm mt-1">
                 Lahore, Pakistan · Supervised ML, Deep Learning, MLOps, NLP, Vector Embeddings, Database Architecture.
               </p>
@@ -104,10 +102,10 @@ const metadata = {
             <hr class="border-gray-200 dark:border-slate-800" />
             <ul class="space-y-3">
               <li class="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
-                <span class="text-emerald-500 font-bold">✓</span> Supervised Machine Learning — Coursera
+                <Icon name="tabler:circle-check" class="w-4 h-4 text-emerald-500" /> Supervised Machine Learning — Coursera
               </li>
               <li class="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
-                <span class="text-emerald-500 font-bold">✓</span> MLOps: MLflow & Hugging Face — Coursera
+                <Icon name="tabler:circle-check" class="w-4 h-4 text-emerald-500" /> MLOps: MLflow & Hugging Face — Coursera
               </li>
             </ul>
           </div>
@@ -131,7 +129,7 @@ const metadata = {
       },
       {
         title: 'Web Scraping',
-        description: 'BeautifulSoup, Selenium, Price Sync scrapers, Anti-bot bypass, API reverse engineering, Cron automation, Data validation.',
+        description: 'Robust web crawlers, BeautifulSoup, Selenium, Anti-bot bypass mechanisms, API reverse engineering, Cron automation, Data validation.',
         icon: 'tabler:spider',
       },
       {
@@ -141,7 +139,7 @@ const metadata = {
       },
       {
         title: 'Automation & Ops',
-        description: 'n8n orchestration, Webhook-driven pipelines, YouTube API integrations, Multi-agent workflows, GitHub Actions, Linux server admin.',
+        description: 'Workflow automation orchestration, Webhook-driven event pipelines, API integrations, Multi-agent system flows, GitHub Actions CI/CD.',
         icon: 'tabler:settings',
       },
     ]}
@@ -155,9 +153,9 @@ const metadata = {
       {
         title: 'AI Developer & Data Pipeline Engineer <br /> <span class="font-normal text-muted dark:text-slate-400">Software & Automation Engineering (2024 - Present)</span>',
         description: `• Configured Pinecone vector indexes and Hugging Face embeddings for context-aware student search query matching.
-                      <br />• Wrote resilient BeautifulSoup and Selenium scrapers for JavaScript-heavy sites with automatic DOM-change recovery.
+                      <br />• Wrote resilient data harvesting scrapers for JavaScript-heavy sites with automatic DOM-change recovery.
                       <br />• Built daily automated price sync scrapers for 47 device categories, writing cleaned records directly to MongoDB.
-                      <br />• Designed n8n webhook workflows: YouTube video upload → automatic transcript fetch → Claude/GPT categorization → dashboard sync.
+                      <br />• Designed webhook-driven automation workflows: Media upload → automatic transcript extraction → AI categorization → dashboard synchronization.
                       <br />• Shipped high-performance responsive client websites for lawn care businesses with customized local SEO structures.`,
         icon: 'tabler:briefcase',
       },
@@ -188,7 +186,7 @@ const metadata = {
         <!-- Project 1 -->
         <article class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 flex flex-col" data-cat="ai-ml">
           <div class="h-40 bg-slate-100 dark:bg-slate-800 flex items-center justify-center border-b border-gray-200 dark:border-slate-800 relative">
-            <span class="text-5xl">⚖️</span>
+            <Icon name="tabler:scale" class="w-12 h-12 text-blue-600 dark:text-blue-400" />
           </div>
           <div class="p-6 flex-1 flex flex-col justify-between">
             <div>
@@ -214,19 +212,19 @@ const metadata = {
         <!-- Project 2 -->
         <article class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 flex flex-col" data-cat="web-scraping">
           <div class="h-40 bg-slate-100 dark:bg-slate-800 flex items-center justify-center border-b border-gray-200 dark:border-slate-800 relative">
-            <span class="text-5xl">📱</span>
+            <Icon name="tabler:device-mobile" class="w-12 h-12 text-blue-600 dark:text-blue-400" />
           </div>
           <div class="p-6 flex-1 flex flex-col justify-between">
             <div>
               <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Web Scraping</span>
               <h3 class="text-xl font-bold mt-1 mb-2">MobileOye Price Sync</h3>
               <p class="text-muted dark:text-slate-400 text-sm leading-relaxed mb-4">
-                Automated daily price sync across 47 mobile categories in Pakistan. Script-based BeautifulSoup scrapers, MongoDB writes, and Vercel serverless logs.
+                Automated daily price sync across 47 mobile categories in Pakistan. Script-based data harvester pipelines, MongoDB writes, and Vercel serverless logs.
               </p>
             </div>
             <div>
               <div class="flex flex-wrap gap-1.5 mb-4">
-                {['Next.js', 'MongoDB', 'Python', 'BeautifulSoup'].map(t => (
+                {['Next.js', 'MongoDB', 'Python', 'Web Crawling'].map(t => (
                   <span class="px-2 py-0.5 text-xs font-mono bg-gray-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded">{t}</span>
                 ))}
               </div>
@@ -240,19 +238,19 @@ const metadata = {
         <!-- Project 3 -->
         <article class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 flex flex-col" data-cat="automation">
           <div class="h-40 bg-slate-100 dark:bg-slate-800 flex items-center justify-center border-b border-gray-200 dark:border-slate-800 relative">
-            <span class="text-5xl">⚙️</span>
+            <Icon name="tabler:settings" class="w-12 h-12 text-blue-600 dark:text-blue-400" />
           </div>
           <div class="p-6 flex-1 flex flex-col justify-between">
             <div>
               <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Automation</span>
-              <h3 class="text-xl font-bold mt-1 mb-2">n8n YouTube Pipeline</h3>
+              <h3 class="text-xl font-bold mt-1 mb-2">YouTube Automation Pipeline</h3>
               <p class="text-muted dark:text-slate-400 text-sm leading-relaxed mb-4">
-                Webhook-driven n8n workflow: YouTube upload triggers raw transcript fetching, processed by a Claude/GPT agent to write structured summaries to web dashboards.
+                Webhook-driven workflow: YouTube upload triggers raw transcript fetching, processed by a language model agent to write structured summaries to web dashboards.
               </p>
             </div>
             <div>
               <div class="flex flex-wrap gap-1.5 mb-4">
-                {['n8n', 'Webhooks', 'YouTube API', 'AI Agents'].map(t => (
+                {['API Integrations', 'Webhooks', 'YouTube API', 'AI Agents'].map(t => (
                   <span class="px-2 py-0.5 text-xs font-mono bg-gray-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded">{t}</span>
                 ))}
               </div>
@@ -266,7 +264,7 @@ const metadata = {
         <!-- Project 4 -->
         <article class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 flex flex-col" data-cat="full-stack-web">
           <div class="h-40 bg-slate-100 dark:bg-slate-800 flex items-center justify-center border-b border-gray-200 dark:border-slate-800 relative">
-            <span class="text-5xl">🌿</span>
+            <Icon name="tabler:leaf" class="w-12 h-12 text-blue-600 dark:text-blue-400" />
           </div>
           <div class="p-6 flex-1 flex flex-col justify-between">
             <div>
@@ -292,68 +290,6 @@ const metadata = {
     </div>
   </section>
 
-  <!-- Interactive Pipeline Flow ****** -->
-  <section id="pipeline" class="py-16 md:py-24 scroll-mt-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <p class="text-base text-accent dark:text-blue-400 font-bold tracking-wide uppercase">How I Work</p>
-        <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-heading mt-2 mb-4">Pipeline Architecture</h2>
-        <p class="text-xl text-muted dark:text-slate-400">Click each stage to see how I wire automated data pipelines end-to-end.</p>
-      </div>
-
-      <div class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-6 sm:p-10 shadow-sm">
-        <!-- Node Stepper -->
-        <div class="flex flex-wrap justify-center sm:justify-between items-center gap-4 mb-8">
-          <!-- Step 1 -->
-          <button class="flex flex-col items-center gap-2 focus:outline-none pipeline-step active group" data-step="trigger">
-            <div class="w-16 h-16 rounded-full flex items-center justify-center bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400 border-2 border-blue-600 dark:border-blue-400 shadow-md group-hover:scale-105 transition duration-200">
-              <span class="text-2xl">🔗</span>
-            </div>
-            <span class="text-xs font-bold text-slate-800 dark:text-white">Trigger</span>
-          </button>
-          
-          <div class="hidden sm:block flex-1 h-0.5 bg-gray-200 dark:bg-slate-800 mx-2"></div>
-
-          <!-- Step 2 -->
-          <button class="flex flex-col items-center gap-2 focus:outline-none pipeline-step group" data-step="scrape">
-            <div class="w-16 h-16 rounded-full flex items-center justify-center bg-gray-50 dark:bg-slate-900 text-slate-500 border-2 border-transparent group-hover:scale-105 transition duration-200">
-              <span class="text-2xl">🕷️</span>
-            </div>
-            <span class="text-xs font-bold text-slate-500 dark:text-slate-400">Scraper</span>
-          </button>
-
-          <div class="hidden sm:block flex-1 h-0.5 bg-gray-200 dark:bg-slate-800 mx-2"></div>
-
-          <!-- Step 3 -->
-          <button class="flex flex-col items-center gap-2 focus:outline-none pipeline-step group" data-step="ai">
-            <div class="w-16 h-16 rounded-full flex items-center justify-center bg-gray-50 dark:bg-slate-900 text-slate-500 border-2 border-transparent group-hover:scale-105 transition duration-200">
-              <span class="text-2xl">🤖</span>
-            </div>
-            <span class="text-xs font-bold text-slate-500 dark:text-slate-400">AI Model</span>
-          </button>
-
-          <div class="hidden sm:block flex-1 h-0.5 bg-gray-200 dark:bg-slate-800 mx-2"></div>
-
-          <!-- Step 4 -->
-          <button class="flex flex-col items-center gap-2 focus:outline-none pipeline-step group" data-step="db">
-            <div class="w-16 h-16 rounded-full flex items-center justify-center bg-gray-50 dark:bg-slate-900 text-slate-500 border-2 border-transparent group-hover:scale-105 transition duration-200">
-              <span class="text-2xl">🗄️</span>
-            </div>
-            <span class="text-xs font-bold text-slate-500 dark:text-slate-400">DB Sync</span>
-          </button>
-        </div>
-
-        <!-- Info Panel -->
-        <div class="bg-slate-50 dark:bg-slate-950 p-6 rounded-xl border border-gray-100 dark:border-slate-900 min-h-32">
-          <div id="step-title" class="text-lg font-bold text-accent dark:text-blue-400 mb-2">1. Webhook / Cron Trigger</div>
-          <p id="step-desc" class="text-muted dark:text-slate-400 leading-relaxed text-sm">
-            n8n monitors external events — YouTube uploads or scheduled crons. Once fired, it pulls raw metadata and boots the execution chain securely.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Contact Section *************** -->
   <section id="contact" class="py-16 md:py-24 bg-blue-50/30 dark:bg-slate-900/30 scroll-mt-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
@@ -362,26 +298,19 @@ const metadata = {
           <p class="text-base text-accent dark:text-blue-400 font-bold tracking-wide uppercase">Get In Touch</p>
           <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-heading mt-2 mb-4">Let's Talk</h2>
           <p class="text-lg text-muted dark:text-slate-400 mb-8">
-            Fastest reply via WhatsApp. Email works too. Drop a message and I'll respond within a few hours.
+            Fastest reply via email. Drop a message or mail me directly, and I'll respond within a few hours.
           </p>
 
           <div class="space-y-4">
-            <a href="https://wa.me/923223298705?text=Hi%20Muhammad,%20I%20saw%20your%20portfolio!" target="_blank" class="flex items-center gap-4 p-4 rounded-xl border border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-accent hover:shadow-sm transition">
-              <span class="text-3xl">💬</span>
-              <div>
-                <h4 class="text-xs uppercase font-bold text-slate-400">WhatsApp</h4>
-                <p class="font-bold text-slate-800 dark:text-white">+92 322 3298705</p>
-              </div>
-            </a>
             <a href="mailto:imshahzad52@gmail.com?subject=Project Inquiry" class="flex items-center gap-4 p-4 rounded-xl border border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-accent hover:shadow-sm transition">
-              <span class="text-3xl">✉️</span>
+              <Icon name="tabler:mail" class="w-8 h-8 text-blue-500" />
               <div>
                 <h4 class="text-xs uppercase font-bold text-slate-400">Email</h4>
                 <p class="font-bold text-slate-800 dark:text-white">imshahzad52@gmail.com</p>
               </div>
             </a>
             <a href="https://github.com/Shahzad52" target="_blank" class="flex items-center gap-4 p-4 rounded-xl border border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-accent hover:shadow-sm transition">
-              <span class="text-3xl">🐙</span>
+              <Icon name="tabler:brand-github" class="w-8 h-8 text-slate-500" />
               <div>
                 <h4 class="text-xs uppercase font-bold text-slate-400">GitHub</h4>
                 <p class="font-bold text-slate-800 dark:text-white">github.com/Shahzad52</p>
@@ -418,6 +347,24 @@ const metadata = {
 </Layout>
 
 <script>
+  // Typewriter Animation
+  const text = "AI Automation & Data Engineering";
+  const speed = 100;
+  let i = 0;
+  const target = document.getElementById('typewriter-title');
+  if (target) {
+    function typeWriter() {
+      if (i < text.length) {
+        target.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      } else {
+        target.classList.remove('border-r-2');
+      }
+    }
+    typeWriter();
+  }
+
   // Filter logic
   const filterButtons = document.querySelectorAll('#project-filters button');
   const projectCards = document.querySelectorAll('#project-grid article');
@@ -445,59 +392,6 @@ const metadata = {
     });
   });
 
-  // Pipeline Stepper logic
-  const steps = {
-    trigger: {
-      title: "1. Webhook / Cron Trigger",
-      desc: "n8n monitors external events — YouTube uploads or scheduled crons. Once fired, it pulls raw metadata and boots the execution chain securely."
-    },
-    scrape: {
-      title: "2. Clean Data Scraping",
-      desc: "A Python BeautifulSoup/Selenium worker fetches live web data — specs, prices, articles. It cleans and normalizes raw HTML while seamlessly bypasses basic bot-detection."
-    },
-    ai: {
-      title: "3. ML Classification & Embeddings",
-      desc: "BERT models classify difficulty/content. LangChain RAG chains fact-check context. Hugging Face embeddings are generated for semantic search."
-    },
-    db: {
-      title: "4. Database Sync",
-      desc: "Embeddings load into Pinecone for semantic search. Structured records sync to MongoDB and PostgreSQL, closing the automation loop cleanly."
-    }
-  };
-
-  const stepButtons = document.querySelectorAll('.pipeline-step');
-  const stepTitle = document.getElementById('step-title');
-  const stepDesc = document.getElementById('step-desc');
-
-  stepButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // Remove active classes
-      stepButtons.forEach(b => {
-        const innerCircle = b.querySelector('div');
-        const textSpan = b.querySelector('span:last-child');
-        innerCircle.classList.remove('bg-blue-50', 'dark:bg-slate-800', 'text-blue-600', 'dark:text-blue-400', 'border-blue-600', 'dark:border-blue-400', 'shadow-md');
-        innerCircle.classList.add('bg-gray-50', 'dark:bg-slate-900', 'text-slate-500', 'border-transparent');
-        textSpan.classList.remove('text-slate-800', 'dark:text-white');
-        textSpan.classList.add('text-slate-500', 'dark:text-slate-400');
-      });
-
-      // Add active class to clicked
-      const circle = btn.querySelector('div');
-      const text = btn.querySelector('span:last-child');
-      circle.classList.add('bg-blue-50', 'dark:bg-slate-800', 'text-blue-600', 'dark:text-blue-400', 'border-blue-600', 'dark:border-blue-400', 'shadow-md');
-      circle.classList.remove('bg-gray-50', 'dark:bg-slate-900', 'text-slate-500', 'border-transparent');
-      text.classList.add('text-slate-800', 'dark:text-white');
-      text.classList.remove('text-slate-500', 'dark:text-slate-400');
-
-      const stepKey = btn.getAttribute('data-step');
-      const data = steps[stepKey];
-      if (stepTitle && stepDesc && data) {
-        stepTitle.textContent = data.title;
-        stepDesc.textContent = data.desc;
-      }
-    });
-  });
-
   // Contact Form Submission
   const form = document.getElementById('contact-form');
   const toast = document.getElementById('form-toast');
@@ -514,7 +408,7 @@ const metadata = {
 
       setTimeout(() => {
         toast.className = 'p-4 rounded-lg text-sm mb-4 bg-emerald-100 text-emerald-800 border border-emerald-200 dark:bg-emerald-900/30 dark:text-emerald-300 dark:border-emerald-800';
-        toast.textContent = "Got it! I'll reach out via WhatsApp or email shortly.";
+        toast.textContent = "Got it! I'll reach out via email shortly.";
         toast.classList.remove('hidden');
 
         form.reset();

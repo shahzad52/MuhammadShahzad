@@ -19,20 +19,16 @@ export const headerData = {
       href: '#projects',
     },
     {
-      text: 'Pipeline Flow',
-      href: '#pipeline',
-    },
-    {
       text: 'Contact',
       href: '#contact',
     },
   ],
   actions: [
     {
-      text: 'WhatsApp Me',
-      href: 'https://wa.me/923223298705?text=Hi%20Muhammad,%20I%20saw%20your%20portfolio!',
+      text: 'Contact Me',
+      href: 'mailto:imshahzad52@gmail.com?subject=Project Inquiry',
       target: '_blank',
-      icon: 'tabler:brand-whatsapp',
+      icon: 'tabler:mail',
     }
   ],
 };
@@ -42,10 +38,9 @@ export const footerData = {
   secondaryLinks: [],
   socialLinks: [
     { ariaLabel: 'GitHub', icon: 'tabler:brand-github', href: 'https://github.com/Shahzad52' },
-    { ariaLabel: 'WhatsApp', icon: 'tabler:brand-whatsapp', href: 'https://wa.me/923223298705' },
     { ariaLabel: 'Email', icon: 'tabler:mail', href: 'mailto:imshahzad52@gmail.com' },
   ],
   footNote: `
-    © ${new Date().getFullYear()} Muhammad Shahzad · PUCIT B.S. Data Science Graduate · Lahore, Pakistan
+    © ${new Date().getFullYear()} Muhammad Shahzad · Data Scientist · Lahore, Pakistan
   `,
 };
