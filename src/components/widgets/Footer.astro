@@ -1,6 +1,5 @@
 ---
 import { Icon } from 'astro-icon/components';
-import { SITE } from 'astrowind:config';
 import { getHomePermalink } from '~/utils/permalinks';
 
 interface Link {
@@ -23,82 +22,84 @@ export interface Props {
   theme?: string;
 }
 
-const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme = 'light' } = Astro.props;
+const { socialLinks = [] } = Astro.props;
+
+const year = new Date().getFullYear();
+
+const navLinks = [
+  { text: 'About',      href: '#about' },
+  { text: 'Skills',     href: '#skills' },
+  { text: 'Experience', href: '#experience' },
+  { text: 'Projects',   href: '#projects' },
+  { text: 'Contact',    href: '#contact' },
+];
 ---
 
-<footer class:list={[{ dark: theme === 'dark' }, 'relative border-t border-gray-200 dark:border-slate-800 not-prose']}>
-  <div class="dark:bg-dark absolute inset-0 pointer-events-none" aria-hidden="true"></div>
-  <div
-    class="relative max-w-7xl mx-auto px-4 sm:px-6 dark:text-slate-300 intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-  >
-    <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
-      <div class="col-span-12 lg:col-span-4">
-        <div class="mb-2">
-          <a class="inline-block font-bold text-xl" href={getHomePermalink()}>{SITE?.name}</a>
-        </div>
-        <div class="text-sm text-muted flex gap-1">
-          {
-            secondaryLinks.map(({ text, href }, index) => (
-              <>
-                {index !== 0 ? ' · ' : ''}
-                <a
-                  class="text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out"
-                  href={href}
-                  set:html={text}
-                />
-              </>
-            ))
-          }
-        </div>
-      </div>
-      {
-        links.map(({ title, links }) => (
-          <div class="col-span-6 md:col-span-3 lg:col-span-2">
-            <div class="dark:text-gray-300 font-medium mb-2">{title}</div>
-            {links && Array.isArray(links) && links.length > 0 && (
-              <ul class="text-sm">
-                {links.map(({ text, href, ariaLabel }) => (
-                  <li class="mb-2">
-                    <a
-                      class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out"
-                      href={href}
-                      aria-label={ariaLabel}
-                    >
-                      <Fragment set:html={text} />
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-        ))
-      }
-    </div>
-    <div class="md:flex md:items-center md:justify-between py-6 md:py-8">
-      {
-        socialLinks?.length ? (
-          <ul class="flex mb-4 md:order-1 -ml-2 md:ml-4 md:mb-0 rtl:ml-0 rtl:-mr-2 rtl:md:ml-0 rtl:md:mr-4">
-            {socialLinks.map(({ ariaLabel, href, text, icon }) => (
-              <li>
-                <a
-                  class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
-                  aria-label={ariaLabel}
-                  href={href}
-                >
-                  {icon && <Icon name={icon} class="w-5 h-5" />}
-                  <Fragment set:html={text} />
-                </a>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          ''
-        )
-      }
+<footer class="relative not-prose bg-white" style="border-top: 1px solid rgb(241 245 249);">
+  <!-- subtle top gradient accent -->
+  <div class="absolute top-0 left-0 right-0 h-px" style="background: linear-gradient(90deg, transparent, rgb(199 210 254 / 0.8), transparent);"></div>
 
-      <div class="text-sm mr-4 dark:text-muted">
-        <Fragment set:html={footNote} />
+  <div class="max-w-4xl mx-auto px-6 py-12">
+    <!-- Top row -->
+    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-10 mb-10">
+
+      <!-- Brand block -->
+      <div class="max-w-xs">
+        <a href={getHomePermalink()} class="text-lg font-semibold text-gray-900 tracking-tight hover:text-indigo-600 transition-colors"
+           style="font-family:'Inter Variable',system-ui,sans-serif; letter-spacing:-0.03em;">
+          Muhammad Shahzad
+        </a>
+        <p class="text-sm text-gray-400 mt-2 leading-relaxed">
+          Developer based in Lahore — building AI pipelines, automation systems, and full-stack web apps.
+        </p>
+        <!-- Social icons -->
+        <div class="flex items-center gap-2 mt-5">
+          <a href="https://github.com/Shahzad52" target="_blank" aria-label="GitHub"
+             class="w-8 h-8 flex items-center justify-center rounded-lg border border-gray-100 bg-white text-gray-500 hover:text-indigo-600 hover:border-indigo-200 transition-all shadow-sm">
+            <Icon name="tabler:brand-github" class="w-4 h-4" />
+          </a>
+          <a href="mailto:imshahzad52@gmail.com" aria-label="Email"
+             class="w-8 h-8 flex items-center justify-center rounded-lg border border-gray-100 bg-white text-gray-500 hover:text-indigo-600 hover:border-indigo-200 transition-all shadow-sm">
+            <Icon name="tabler:mail" class="w-4 h-4" />
+          </a>
+        </div>
       </div>
+
+      <!-- Nav links -->
+      <div>
+        <p class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">Navigation</p>
+        <ul class="space-y-2.5">
+          {navLinks.map(({ text, href }) => (
+            <li>
+              <a href={href}
+                 class="text-sm text-gray-500 hover:text-gray-900 hover:translate-x-0.5 inline-block transition-all duration-150">
+                {text}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Contact block -->
+      <div>
+        <p class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">Get in touch</p>
+        <a href="mailto:imshahzad52@gmail.com?subject=Project Inquiry"
+           class="inline-flex items-center gap-2 px-4 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-indigo-600 transition-colors">
+          <Icon name="tabler:mail" class="w-4 h-4" />
+          Send an email
+        </a>
+        <p class="text-xs text-gray-400 mt-3">Usually replies within a few hours.</p>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6" style="border-top: 1px solid rgb(241 245 249);">
+      <p class="text-xs text-gray-400">
+        © {year} Muhammad Shahzad · Lahore, Pakistan
+      </p>
+      <p class="text-xs text-gray-400">
+        Data Scientist &amp; AI Developer
+      </p>
     </div>
   </div>
 </footer>

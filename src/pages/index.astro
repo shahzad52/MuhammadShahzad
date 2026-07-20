@@ -1,423 +1,434 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Features3 from '~/components/widgets/Features3.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import Stats from '~/components/widgets/Stats.astro';
 import { Icon } from 'astro-icon/components';
 
 const metadata = {
-  title: 'Muhammad Shahzad — AI Automation & Data Engineer',
+  title: 'Muhammad Shahzad — Developer & Data Engineer',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-  <Hero
-    actions={[
-      {
-        variant: 'primary',
-        text: 'View Projects',
-        href: '#projects',
-        icon: 'tabler:arrow-down',
-      },
-      {
-        text: 'Contact Me',
-        href: 'mailto:imshahzad52@gmail.com?subject=Project Inquiry',
-        target: '_blank',
-        icon: 'tabler:mail',
-      },
-    ]}
-  >
-    <Fragment slot="title">
-      <span id="typewriter-title" class="inline-block text-accent dark:text-blue-400 border-r-2 border-accent dark:border-blue-400 pr-1"></span>
-    </Fragment>
 
-    <Fragment slot="subtitle">
-      Data Scientist with 1.5+ years of experience building resilient Python AI pipelines,
-      robust data harvesting tools, workflow automation systems, and high-performance full-stack web applications.
-      <br class="hidden md:inline" /> Based in Lahore — working globally.
-    </Fragment>
-
-    <Fragment slot="content">
-      <div class="mt-4 flex flex-wrap justify-center gap-2 max-w-lg mx-auto">
-        <span class="px-3 py-1 text-xs font-mono bg-blue-100 dark:bg-slate-800 text-blue-800 dark:text-blue-300 rounded-full border border-blue-200 dark:border-slate-700">Python</span>
-        <span class="px-3 py-1 text-xs font-mono bg-blue-100 dark:bg-slate-800 text-blue-800 dark:text-blue-300 rounded-full border border-blue-200 dark:border-slate-700">Next.js</span>
-        <span class="px-3 py-1 text-xs font-mono bg-blue-100 dark:bg-slate-800 text-blue-800 dark:text-blue-300 rounded-full border border-blue-200 dark:border-slate-700">Automation</span>
-        <span class="px-3 py-1 text-xs font-mono bg-blue-100 dark:bg-slate-800 text-blue-800 dark:text-blue-300 rounded-full border border-blue-200 dark:border-slate-700">Ruby on Rails</span>
-        <span class="px-3 py-1 text-xs font-mono bg-blue-100 dark:bg-slate-800 text-blue-800 dark:text-blue-300 rounded-full border border-blue-200 dark:border-slate-700">MongoDB</span>
-      </div>
-    </Fragment>
-  </Hero>
-
-  <!-- Stats Widget ****************** -->
-  <Stats
-    stats={[
-      { title: 'Years Experience', amount: '1.5+' },
-      { title: 'Price Sync Categories', amount: '40+' },
-      { title: 'Client Projects Shipped', amount: '5+' },
-      { title: 'Role', amount: 'Data Scientist' },
-    ]}
-  />
-
-  <!-- About Section ***************** -->
-  <section id="about" class="py-16 md:py-24 bg-blue-50/30 dark:bg-slate-900/30 scroll-mt-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="grid md:grid-cols-2 gap-12 items-start">
-        <div>
-          <p class="text-base text-accent dark:text-blue-400 font-bold tracking-wide uppercase">Background</p>
-          <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-heading mt-2 mb-6">About My Work</h2>
-          <div class="text-lg text-muted dark:text-slate-400 space-y-4">
-            <p>
-              I turn messy, manual workflows into clean, automated systems. My background in 
-              <strong>Data Science</strong> gave me a solid foundation in how ML models, 
-              embeddings, and classification actually work — not just how to call an API.
-            </p>
-            <p>
-              Day-to-day I build web apps with Next.js and Ruby on Rails, write robust data 
-              harvesting pipelines in Python, coordinate automated multi-agent workflow systems, 
-              and integrate AI layers using vector databases.
-            </p>
-            <blockquote class="border-l-4 border-accent pl-4 italic text-slate-700 dark:text-slate-300 bg-accent/5 py-2 pr-2 rounded-r-md">
-              "Clean exception handling in scrapers, proper RAG context windows, functional 
-              AI flows that solve real problems — not demos that break in production."
-            </blockquote>
-          </div>
-        </div>
-
-        <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-gray-200 dark:border-slate-800 shadow-sm relative overflow-hidden">
-          <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-blue-600 to-emerald-500"></div>
-          <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
-            <Icon name="tabler:school" class="w-6 h-6 text-accent dark:text-blue-400" /> Education & Certifications
-          </h3>
-          <div class="space-y-6">
-            <div>
-              <h4 class="font-bold text-lg">B.S. Data Science</h4>
-              <p class="text-accent dark:text-blue-400 font-medium">Graduated (2021 – 2025)</p>
-              <p class="text-muted dark:text-slate-400 text-sm mt-1">
-                Lahore, Pakistan · Supervised ML, Deep Learning, MLOps, NLP, Vector Embeddings, Database Architecture.
-              </p>
-            </div>
-            <hr class="border-gray-200 dark:border-slate-800" />
-            <ul class="space-y-3">
-              <li class="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
-                <Icon name="tabler:circle-check" class="w-4 h-4 text-emerald-500" /> Supervised Machine Learning — Coursera
-              </li>
-              <li class="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
-                <Icon name="tabler:circle-check" class="w-4 h-4 text-emerald-500" /> MLOps: MLflow & Hugging Face — Coursera
-              </li>
-            </ul>
-          </div>
-        </div>
+  <!-- Hero -->
+  <section class="relative overflow-hidden" id="hero">
+    <!-- Moving diagonal lines layer -->
+    <div class="hero-lines-bg pointer-events-none" aria-hidden="true"></div>
+    <!-- Radial mask so text stays readable -->
+    <div class="hero-lines-mask pointer-events-none" aria-hidden="true"></div>
+    <!-- Drifting colour wash top-left -->
+    <div class="hero-wash absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full pointer-events-none opacity-60" aria-hidden="true"></div>
+    <!-- Content -->
+    <div class="relative z-10 pt-20 md:pt-32 pb-24 px-6 max-w-4xl mx-auto">
+      <h1 class="text-5xl md:text-[3.75rem] font-bold leading-tight text-gray-900 mb-6" style="font-family:'DM Serif Display',Georgia,serif; letter-spacing:-0.03em;">
+        <span id="tw-text"></span><span class="tw-cursor" id="tw-cursor"></span>
+      </h1>
+      <p class="text-xl text-gray-500 leading-relaxed max-w-2xl mb-10">
+        I'm Shahzad — a developer based in Lahore. I work on data pipelines,
+        AI integrations, web scraping, and full-stack apps. I like things that
+        actually work in production.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a href="#projects" class="inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-gray-700 transition-colors">
+          See my work
+        </a>
+        <a href="mailto:imshahzad52@gmail.com?subject=Project Inquiry" class="inline-flex items-center gap-2 border border-gray-200 text-gray-700 px-6 py-3 rounded-lg text-sm font-medium hover:border-gray-400 hover:text-gray-900 transition-colors">
+          Get in touch
+        </a>
       </div>
     </div>
+    <!-- bottom fade to body bg -->
+    <div class="absolute bottom-0 left-0 right-0 h-28 pointer-events-none" style="background: linear-gradient(to bottom, transparent, rgb(250 250 252));"></div>
   </section>
 
-  <!-- Technical Stack Widget ******** -->
-  <Features3
-    id="skills"
-    tagline="Capabilities"
-    title="Technical Stack"
-    subtitle="Tools I reach for regularly — not a keyword dump."
-    columns={2}
-    items={[
-      {
-        title: 'AI / ML & Python',
-        description: 'LangChain & RAG, BERT Classification, Hugging Face, Pinecone, TensorFlow, Scikit-Learn, OpenAI API, Llama models.',
-        icon: 'tabler:robot',
-      },
-      {
-        title: 'Web Scraping',
-        description: 'Robust web crawlers, BeautifulSoup, Selenium, Anti-bot bypass mechanisms, API reverse engineering, Cron automation, Data validation.',
-        icon: 'tabler:spider',
-      },
-      {
-        title: 'Web Engineering',
-        description: 'Next.js, React, Ruby on Rails, Flask, Django, PostgreSQL, MongoDB, Docker, Vercel optimization, Local SEO.',
-        icon: 'tabler:world',
-      },
-      {
-        title: 'Automation & Ops',
-        description: 'Workflow automation orchestration, Webhook-driven event pipelines, API integrations, Multi-agent system flows, GitHub Actions CI/CD.',
-        icon: 'tabler:settings',
-      },
-    ]}
-  />
+  <!-- Divider -->
+  <div class="max-w-4xl mx-auto px-6">
+    <hr class="border-gray-100" />
+  </div>
 
-  <!-- Experience Timeline Widget **** -->
-  <Steps
-    id="experience"
-    title="Professional Experience"
-    items={[
-      {
-        title: 'AI Developer & Data Pipeline Engineer <br /> <span class="font-normal text-muted dark:text-slate-400">Software & Automation Engineering (2024 - Present)</span>',
-        description: `• Configured Pinecone vector indexes and Hugging Face embeddings for context-aware student search query matching.
-                      <br />• Wrote resilient data harvesting scrapers for JavaScript-heavy sites with automatic DOM-change recovery.
-                      <br />• Built daily automated price sync scrapers for 47 device categories, writing cleaned records directly to MongoDB.
-                      <br />• Designed webhook-driven automation workflows: Media upload → automatic transcript extraction → AI categorization → dashboard synchronization.
-                      <br />• Shipped high-performance responsive client websites for lawn care businesses with customized local SEO structures.`,
-        icon: 'tabler:briefcase',
-      },
-    ]}
-    classes={{ container: 'max-w-4xl scroll-mt-20' }}
-  />
-
-  <!-- Projects Grid Section ********* -->
-  <section id="projects" class="py-16 md:py-24 bg-blue-50/30 dark:bg-slate-900/30 scroll-mt-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <p class="text-base text-accent dark:text-blue-400 font-bold tracking-wide uppercase">Portfolio</p>
-        <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-heading mt-2 mb-4">Selected Projects</h2>
-        <p class="text-xl text-muted dark:text-slate-400">Real builds — not toy demos.</p>
-      </div>
-
-      <!-- Filter Controls -->
-      <div class="flex flex-wrap justify-center gap-2 mb-10" id="project-filters">
-        <button class="px-4 py-1.5 rounded-full text-sm font-semibold border bg-blue-600 text-white border-blue-600" data-filter="all">All</button>
-        <button class="px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-200 dark:border-slate-800 hover:border-accent hover:text-accent dark:hover:text-blue-400" data-filter="ai-ml">AI/ML</button>
-        <button class="px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-200 dark:border-slate-800 hover:border-accent hover:text-accent dark:hover:text-blue-400" data-filter="web-scraping">Web Scraping</button>
-        <button class="px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-200 dark:border-slate-800 hover:border-accent hover:text-accent dark:hover:text-blue-400" data-filter="automation">Automation</button>
-        <button class="px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-200 dark:border-slate-800 hover:border-accent hover:text-accent dark:hover:text-blue-400" data-filter="full-stack-web">Full-Stack Web</button>
-      </div>
-
-      <!-- Grid -->
-      <div class="grid md:grid-cols-2 gap-8" id="project-grid">
-        <!-- Project 1 -->
-        <article class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 flex flex-col" data-cat="ai-ml">
-          <div class="h-40 bg-slate-100 dark:bg-slate-800 flex items-center justify-center border-b border-gray-200 dark:border-slate-800 relative">
-            <Icon name="tabler:scale" class="w-12 h-12 text-blue-600 dark:text-blue-400" />
-          </div>
-          <div class="p-6 flex-1 flex flex-col justify-between">
-            <div>
-              <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">AI/ML</span>
-              <h3 class="text-xl font-bold mt-1 mb-2">FileIt</h3>
-              <p class="text-muted dark:text-slate-400 text-sm leading-relaxed mb-4">
-                Legal document NLP analyzer. Extracts entities from legal briefs, providing constitutional references via localized vector search. Flask + PostgreSQL backend.
-              </p>
-            </div>
-            <div>
-              <div class="flex flex-wrap gap-1.5 mb-4">
-                {['Flask', 'PostgreSQL', 'NLP', 'Spacy', 'Vector Search'].map(t => (
-                  <span class="px-2 py-0.5 text-xs font-mono bg-gray-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded">{t}</span>
-                ))}
-              </div>
-              <a href="https://github.com/Shahzad52" target="_blank" class="text-sm font-semibold text-accent dark:text-blue-400 inline-flex items-center gap-1 hover:underline">
-                View on GitHub →
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 2 -->
-        <article class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 flex flex-col" data-cat="web-scraping">
-          <div class="h-40 bg-slate-100 dark:bg-slate-800 flex items-center justify-center border-b border-gray-200 dark:border-slate-800 relative">
-            <Icon name="tabler:device-mobile" class="w-12 h-12 text-blue-600 dark:text-blue-400" />
-          </div>
-          <div class="p-6 flex-1 flex flex-col justify-between">
-            <div>
-              <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Web Scraping</span>
-              <h3 class="text-xl font-bold mt-1 mb-2">MobileOye Price Sync</h3>
-              <p class="text-muted dark:text-slate-400 text-sm leading-relaxed mb-4">
-                Automated daily price sync across 47 mobile categories in Pakistan. Script-based data harvester pipelines, MongoDB writes, and Vercel serverless logs.
-              </p>
-            </div>
-            <div>
-              <div class="flex flex-wrap gap-1.5 mb-4">
-                {['Next.js', 'MongoDB', 'Python', 'Web Crawling'].map(t => (
-                  <span class="px-2 py-0.5 text-xs font-mono bg-gray-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded">{t}</span>
-                ))}
-              </div>
-              <a href="https://github.com/Shahzad52" target="_blank" class="text-sm font-semibold text-accent dark:text-blue-400 inline-flex items-center gap-1 hover:underline">
-                View on GitHub →
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 3 -->
-        <article class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 flex flex-col" data-cat="automation">
-          <div class="h-40 bg-slate-100 dark:bg-slate-800 flex items-center justify-center border-b border-gray-200 dark:border-slate-800 relative">
-            <Icon name="tabler:settings" class="w-12 h-12 text-blue-600 dark:text-blue-400" />
-          </div>
-          <div class="p-6 flex-1 flex flex-col justify-between">
-            <div>
-              <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Automation</span>
-              <h3 class="text-xl font-bold mt-1 mb-2">YouTube Automation Pipeline</h3>
-              <p class="text-muted dark:text-slate-400 text-sm leading-relaxed mb-4">
-                Webhook-driven workflow: YouTube upload triggers raw transcript fetching, processed by a language model agent to write structured summaries to web dashboards.
-              </p>
-            </div>
-            <div>
-              <div class="flex flex-wrap gap-1.5 mb-4">
-                {['API Integrations', 'Webhooks', 'YouTube API', 'AI Agents'].map(t => (
-                  <span class="px-2 py-0.5 text-xs font-mono bg-gray-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded">{t}</span>
-                ))}
-              </div>
-              <a href="https://github.com/Shahzad52" target="_blank" class="text-sm font-semibold text-accent dark:text-blue-400 inline-flex items-center gap-1 hover:underline">
-                View on GitHub →
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 4 -->
-        <article class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 flex flex-col" data-cat="full-stack-web">
-          <div class="h-40 bg-slate-100 dark:bg-slate-800 flex items-center justify-center border-b border-gray-200 dark:border-slate-800 relative">
-            <Icon name="tabler:leaf" class="w-12 h-12 text-blue-600 dark:text-blue-400" />
-          </div>
-          <div class="p-6 flex-1 flex flex-col justify-between">
-            <div>
-              <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Full-Stack Web</span>
-              <h3 class="text-xl font-bold mt-1 mb-2">Lawn Care Websites</h3>
-              <p class="text-muted dark:text-slate-400 text-sm leading-relaxed mb-4">
-                Responsive service sites for local lawn care businesses. Core Web Vitals optimized, local SEO structured, with lead routing via secure email handlers.
-              </p>
-            </div>
-            <div>
-              <div class="flex flex-wrap gap-1.5 mb-4">
-                {['Next.js', 'React', 'Vercel', 'SEO'].map(t => (
-                  <span class="px-2 py-0.5 text-xs font-mono bg-gray-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded">{t}</span>
-                ))}
-              </div>
-              <a href="https://github.com/Shahzad52" target="_blank" class="text-sm font-semibold text-accent dark:text-blue-400 inline-flex items-center gap-1 hover:underline">
-                View on GitHub →
-              </a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section *************** -->
-  <section id="contact" class="py-16 md:py-24 bg-blue-50/30 dark:bg-slate-900/30 scroll-mt-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="grid md:grid-cols-2 gap-12 items-start">
-        <div>
-          <p class="text-base text-accent dark:text-blue-400 font-bold tracking-wide uppercase">Get In Touch</p>
-          <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-heading mt-2 mb-4">Let's Talk</h2>
-          <p class="text-lg text-muted dark:text-slate-400 mb-8">
-            Fastest reply via email. Drop a message or mail me directly, and I'll respond within a few hours.
+  <!-- About -->
+  <section id="about" class="py-24 px-6 max-w-4xl mx-auto scroll-mt-20 reveal">
+    <div class="grid md:grid-cols-5 gap-16">
+      <div class="md:col-span-3">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6" style="font-family:'DM Serif Display',Georgia,serif;">A bit about me</h2>
+        <div class="space-y-4 text-gray-600 leading-relaxed text-[1.05rem]">
+          <p>
+            I graduated with a B.S. in Data Science in 2025 and have spent the last year and a half
+            doing the kind of work that doesn't make it into tutorials — building scrapers that survive
+            DOM changes, writing AI pipelines that hold up under real load, and shipping client
+            projects that I'm actually proud of.
           </p>
-
-          <div class="space-y-4">
-            <a href="mailto:imshahzad52@gmail.com?subject=Project Inquiry" class="flex items-center gap-4 p-4 rounded-xl border border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-accent hover:shadow-sm transition">
-              <Icon name="tabler:mail" class="w-8 h-8 text-blue-500" />
-              <div>
-                <h4 class="text-xs uppercase font-bold text-slate-400">Email</h4>
-                <p class="font-bold text-slate-800 dark:text-white">imshahzad52@gmail.com</p>
-              </div>
-            </a>
-            <a href="https://github.com/Shahzad52" target="_blank" class="flex items-center gap-4 p-4 rounded-xl border border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-accent hover:shadow-sm transition">
-              <Icon name="tabler:brand-github" class="w-8 h-8 text-slate-500" />
-              <div>
-                <h4 class="text-xs uppercase font-bold text-slate-400">GitHub</h4>
-                <p class="font-bold text-slate-800 dark:text-white">github.com/Shahzad52</p>
-              </div>
-            </a>
-          </div>
+          <p>
+            Day-to-day I write a lot of Python, work with Next.js and Ruby on Rails on the web side,
+            and integrate things like vector databases and LLMs when there's a real reason to.
+          </p>
+          <p>
+            I care about clean exception handling, useful abstractions, and code that someone else
+            can actually maintain. Not just code that demos well.
+          </p>
         </div>
-
-        <div class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 p-8 rounded-2xl shadow-sm">
-          <h3 class="text-xl font-bold mb-6">Send a Message</h3>
-          <form id="contact-form" class="space-y-4">
-            <div id="form-toast" class="hidden p-4 rounded-lg text-sm mb-4"></div>
-            
-            <div>
-              <label class="block text-sm font-semibold mb-1 text-slate-700 dark:text-slate-300">Name</label>
-              <input type="text" id="name" required class="w-full px-4 py-2 border border-gray-200 dark:border-slate-800 rounded-lg bg-white dark:bg-slate-950 focus:outline-none focus:border-accent" placeholder="Your Name" />
-            </div>
-            <div>
-              <label class="block text-sm font-semibold mb-1 text-slate-700 dark:text-slate-300">Email</label>
-              <input type="email" id="email" required class="w-full px-4 py-2 border border-gray-200 dark:border-slate-800 rounded-lg bg-white dark:bg-slate-950 focus:outline-none focus:border-accent" placeholder="your@email.com" />
-            </div>
-            <div>
-              <label class="block text-sm font-semibold mb-1 text-slate-700 dark:text-slate-300">Message</label>
-              <textarea id="message" required rows="4" class="w-full px-4 py-2 border border-gray-200 dark:border-slate-800 rounded-lg bg-white dark:bg-slate-950 focus:outline-none focus:border-accent" placeholder="What do you need built?"></textarea>
-            </div>
-            <button type="submit" class="w-full py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-hover transition shadow-sm">
-              Send Message
-            </button>
-          </form>
+      </div>
+      <div class="md:col-span-2">
+        <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+          <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Education</h3>
+          <div class="mb-5">
+            <p class="font-semibold text-gray-900">B.S. Data Science</p>
+            <p class="text-sm text-gray-500 mt-0.5">Lahore, Pakistan · 2021–2025</p>
+            <p class="text-xs text-gray-400 mt-1">ML, Deep Learning, NLP, MLOps, Vector DBs</p>
+          </div>
+          <hr class="border-gray-100 mb-5" />
+          <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-3">Certifications</h3>
+          <ul class="space-y-2">
+            <li class="flex items-start gap-2 text-sm text-gray-600">
+              <Icon name="tabler:circle-check" class="w-4 h-4 text-indigo-500 mt-0.5 shrink-0" />
+              Supervised Machine Learning — Coursera
+            </li>
+            <li class="flex items-start gap-2 text-sm text-gray-600">
+              <Icon name="tabler:circle-check" class="w-4 h-4 text-indigo-500 mt-0.5 shrink-0" />
+              MLOps: MLflow & Hugging Face — Coursera
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-24 px-6 scroll-mt-20 reveal" style="background: linear-gradient(180deg, rgb(248 250 252) 0%, rgb(250 250 252) 100%); border-top: 1px solid rgb(241 245 249); border-bottom: 1px solid rgb(241 245 249);">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-gray-900 mb-3" style="font-family:'DM Serif Display',Georgia,serif;">What I work with</h2>
+      <p class="text-gray-500 mb-12">The tools I reach for regularly — not a keyword dump.</p>
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="bg-white border border-gray-100 rounded-xl p-6 shadow-sm">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-8 bg-indigo-50 rounded-lg flex items-center justify-center">
+              <Icon name="tabler:robot" class="w-4 h-4 text-indigo-600" />
+            </div>
+            <h3 class="font-semibold text-gray-900">AI & Python</h3>
+          </div>
+          <p class="text-sm text-gray-500 leading-relaxed">LangChain, RAG pipelines, BERT classification, Hugging Face, Pinecone, TensorFlow, Scikit-Learn, OpenAI API, Llama models.</p>
+        </div>
+        <div class="bg-white border border-gray-100 rounded-xl p-6 shadow-sm">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-8 bg-indigo-50 rounded-lg flex items-center justify-center">
+              <Icon name="tabler:spider" class="w-4 h-4 text-indigo-600" />
+            </div>
+            <h3 class="font-semibold text-gray-900">Web Scraping</h3>
+          </div>
+          <p class="text-sm text-gray-500 leading-relaxed">BeautifulSoup, Selenium, anti-bot bypass, API reverse engineering, cron automation, data validation pipelines.</p>
+        </div>
+        <div class="bg-white border border-gray-100 rounded-xl p-6 shadow-sm">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-8 bg-indigo-50 rounded-lg flex items-center justify-center">
+              <Icon name="tabler:world" class="w-4 h-4 text-indigo-600" />
+            </div>
+            <h3 class="font-semibold text-gray-900">Web Engineering</h3>
+          </div>
+          <p class="text-sm text-gray-500 leading-relaxed">Next.js, React, Ruby on Rails, Flask, Django, PostgreSQL, MongoDB, Docker, Vercel, local SEO.</p>
+        </div>
+        <div class="bg-white border border-gray-100 rounded-xl p-6 shadow-sm">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-8 bg-indigo-50 rounded-lg flex items-center justify-center">
+              <Icon name="tabler:settings" class="w-4 h-4 text-indigo-600" />
+            </div>
+            <h3 class="font-semibold text-gray-900">Automation</h3>
+          </div>
+          <p class="text-sm text-gray-500 leading-relaxed">Workflow automation, webhook-driven pipelines, API integrations, multi-agent systems, GitHub Actions CI/CD.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="py-24 px-6 max-w-4xl mx-auto scroll-mt-20 reveal">
+    <h2 class="text-3xl font-bold text-gray-900 mb-12" style="font-family:'DM Serif Display',Georgia,serif;">Experience</h2>
+    <div class="relative pl-6 border-l border-gray-100">
+      <div class="mb-2">
+        <span class="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-indigo-500 border-2 border-white shadow-sm"></span>
+        <div class="flex flex-wrap items-baseline gap-3 mb-2">
+          <h3 class="font-semibold text-gray-900 text-lg">AI Developer & Data Pipeline Engineer</h3>
+          <span class="text-sm text-gray-400">2024 – Present</span>
+        </div>
+        <p class="text-sm font-medium text-indigo-600 mb-4">Software & Automation Engineering</p>
+        <ul class="space-y-2.5 text-gray-600 text-[0.95rem] leading-relaxed">
+          <li class="flex gap-2"><span class="text-gray-300 shrink-0">–</span>Set up Pinecone vector indexes and Hugging Face embeddings for student search query matching.</li>
+          <li class="flex gap-2"><span class="text-gray-300 shrink-0">–</span>Wrote scrapers for JavaScript-heavy sites with automatic DOM-change recovery.</li>
+          <li class="flex gap-2"><span class="text-gray-300 shrink-0">–</span>Built daily price sync scrapers across 47 mobile categories, writing directly to MongoDB.</li>
+          <li class="flex gap-2"><span class="text-gray-300 shrink-0">–</span>Designed webhook-driven pipeline: media upload → transcript extraction → AI categorization → dashboard sync.</li>
+          <li class="flex gap-2"><span class="text-gray-300 shrink-0">–</span>Shipped responsive client websites for local businesses with custom local SEO structures.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-24 px-6 scroll-mt-20 reveal" style="background: linear-gradient(180deg, rgb(248 250 252) 0%, rgb(250 250 252) 100%); border-top: 1px solid rgb(241 245 249); border-bottom: 1px solid rgb(241 245 249);">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-gray-900 mb-3" style="font-family:'DM Serif Display',Georgia,serif;">Selected projects</h2>
+      <p class="text-gray-500 mb-10">Real builds — not toy examples.</p>
+
+      <!-- Filter -->
+      <div class="flex flex-wrap gap-2 mb-10" id="project-filters">
+        <button class="px-3 py-1.5 rounded-full text-sm border bg-gray-900 text-white border-gray-900" data-filter="all">All</button>
+        <button class="px-3 py-1.5 rounded-full text-sm border border-gray-200 text-gray-600 hover:border-gray-400 hover:text-gray-900 transition-colors" data-filter="ai-ml">AI / ML</button>
+        <button class="px-3 py-1.5 rounded-full text-sm border border-gray-200 text-gray-600 hover:border-gray-400 hover:text-gray-900 transition-colors" data-filter="web-scraping">Scraping</button>
+        <button class="px-3 py-1.5 rounded-full text-sm border border-gray-200 text-gray-600 hover:border-gray-400 hover:text-gray-900 transition-colors" data-filter="automation">Automation</button>
+        <button class="px-3 py-1.5 rounded-full text-sm border border-gray-200 text-gray-600 hover:border-gray-400 hover:text-gray-900 transition-colors" data-filter="full-stack-web">Full-Stack</button>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-5" id="project-grid">
+        <!-- FileIt -->
+        <article class="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 flex flex-col" data-cat="ai-ml">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-semibold text-indigo-500 uppercase tracking-widest">AI / ML</span>
+            <a href="https://github.com/Shahzad52" target="_blank" class="text-gray-300 hover:text-gray-600 transition-colors">
+              <Icon name="tabler:brand-github" class="w-4 h-4" />
+            </a>
+          </div>
+          <h3 class="font-semibold text-gray-900 text-lg mb-2">FileIt</h3>
+          <p class="text-sm text-gray-500 leading-relaxed flex-1">
+            Legal document NLP analyzer. Extracts entities from legal briefs and serves constitutional references via localized vector search. Flask + PostgreSQL backend.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mt-4">
+            {['Flask', 'PostgreSQL', 'spaCy', 'Pinecone'].map(t => (
+              <span class="px-2 py-0.5 text-xs bg-gray-50 text-gray-500 border border-gray-100 rounded font-mono">{t}</span>
+            ))}
+          </div>
+        </article>
+
+        <!-- MobileOye -->
+        <article class="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 flex flex-col" data-cat="web-scraping">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-semibold text-indigo-500 uppercase tracking-widest">Scraping</span>
+            <a href="https://github.com/Shahzad52" target="_blank" class="text-gray-300 hover:text-gray-600 transition-colors">
+              <Icon name="tabler:brand-github" class="w-4 h-4" />
+            </a>
+          </div>
+          <h3 class="font-semibold text-gray-900 text-lg mb-2">MobileOye Price Sync</h3>
+          <p class="text-sm text-gray-500 leading-relaxed flex-1">
+            Daily automated price sync across 47 mobile categories in Pakistan. Script-based harvester pipelines, MongoDB writes, and Vercel serverless logs.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mt-4">
+            {['Next.js', 'MongoDB', 'Python', 'Cron'].map(t => (
+              <span class="px-2 py-0.5 text-xs bg-gray-50 text-gray-500 border border-gray-100 rounded font-mono">{t}</span>
+            ))}
+          </div>
+        </article>
+
+        <!-- YouTube Pipeline -->
+        <article class="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 flex flex-col" data-cat="automation">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-semibold text-indigo-500 uppercase tracking-widest">Automation</span>
+            <a href="https://github.com/Shahzad52" target="_blank" class="text-gray-300 hover:text-gray-600 transition-colors">
+              <Icon name="tabler:brand-github" class="w-4 h-4" />
+            </a>
+          </div>
+          <h3 class="font-semibold text-gray-900 text-lg mb-2">YouTube Automation Pipeline</h3>
+          <p class="text-sm text-gray-500 leading-relaxed flex-1">
+            Webhook-driven flow: upload triggers raw transcript fetching → LLM agent processes it → writes structured summaries to a web dashboard automatically.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mt-4">
+            {['Webhooks', 'YouTube API', 'AI Agents', 'Python'].map(t => (
+              <span class="px-2 py-0.5 text-xs bg-gray-50 text-gray-500 border border-gray-100 rounded font-mono">{t}</span>
+            ))}
+          </div>
+        </article>
+
+        <!-- Lawn Care -->
+        <article class="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 flex flex-col" data-cat="full-stack-web">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-semibold text-indigo-500 uppercase tracking-widest">Full-Stack</span>
+            <a href="https://github.com/Shahzad52" target="_blank" class="text-gray-300 hover:text-gray-600 transition-colors">
+              <Icon name="tabler:brand-github" class="w-4 h-4" />
+            </a>
+          </div>
+          <h3 class="font-semibold text-gray-900 text-lg mb-2">Lawn Care Websites</h3>
+          <p class="text-sm text-gray-500 leading-relaxed flex-1">
+            Responsive service sites for local lawn care businesses. Core Web Vitals optimized, structured local SEO, lead routing via secure email handlers.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mt-4">
+            {['Next.js', 'React', 'Vercel', 'Local SEO'].map(t => (
+              <span class="px-2 py-0.5 text-xs bg-gray-50 text-gray-500 border border-gray-100 rounded font-mono">{t}</span>
+            ))}
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-24 px-6 max-w-4xl mx-auto scroll-mt-20 reveal">
+    <div class="grid md:grid-cols-2 gap-16 items-start">
+      <div>
+        <h2 class="text-3xl font-bold text-gray-900 mb-4" style="font-family:'DM Serif Display',Georgia,serif;">Let's work together</h2>
+        <p class="text-gray-500 mb-8 leading-relaxed">
+          I'm open to freelance projects, contract work, and interesting problems. 
+          Fastest reply via email — usually within a few hours.
+        </p>
+        <div class="space-y-3">
+          <a href="mailto:imshahzad52@gmail.com?subject=Project Inquiry" class="flex items-center gap-3 p-4 rounded-xl border border-gray-100 bg-gray-50 hover:bg-gray-100 transition-colors group">
+            <div class="w-9 h-9 bg-white rounded-lg flex items-center justify-center shadow-sm border border-gray-100">
+              <Icon name="tabler:mail" class="w-4 h-4 text-indigo-500" />
+            </div>
+            <div>
+              <p class="text-xs text-gray-400 font-medium">Email</p>
+              <p class="text-sm font-semibold text-gray-800">imshahzad52@gmail.com</p>
+            </div>
+          </a>
+          <a href="https://github.com/Shahzad52" target="_blank" class="flex items-center gap-3 p-4 rounded-xl border border-gray-100 bg-gray-50 hover:bg-gray-100 transition-colors group">
+            <div class="w-9 h-9 bg-white rounded-lg flex items-center justify-center shadow-sm border border-gray-100">
+              <Icon name="tabler:brand-github" class="w-4 h-4 text-gray-600" />
+            </div>
+            <div>
+              <p class="text-xs text-gray-400 font-medium">GitHub</p>
+              <p class="text-sm font-semibold text-gray-800">github.com/Shahzad52</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
+        <h3 class="font-semibold text-gray-900 mb-5">Send a message</h3>
+        <form id="contact-form" class="space-y-4">
+          <div id="form-toast" class="hidden p-3 rounded-lg text-sm"></div>
+          <div>
+            <label class="block text-sm font-medium text-gray-600 mb-1.5">Name</label>
+            <input type="text" id="name" required class="w-full px-3.5 py-2.5 text-sm border border-gray-200 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-300 transition" placeholder="Your name" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-600 mb-1.5">Email</label>
+            <input type="email" id="email" required class="w-full px-3.5 py-2.5 text-sm border border-gray-200 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-300 transition" placeholder="you@example.com" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-600 mb-1.5">Message</label>
+            <textarea id="message" required rows="4" class="w-full px-3.5 py-2.5 text-sm border border-gray-200 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-300 transition resize-none" placeholder="What are you working on?"></textarea>
+          </div>
+          <button type="submit" class="w-full py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-700 transition-colors">
+            Send message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
 </Layout>
 
 <script>
-  // Typewriter Animation
-  const text = "AI Automation & Data Engineering";
-  const speed = 100;
-  let i = 0;
-  const target = document.getElementById('typewriter-title');
-  if (target) {
-    function typeWriter() {
-      if (i < text.length) {
-        target.innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, speed);
-      } else {
-        target.classList.remove('border-r-2');
-      }
-    }
-    typeWriter();
-  }
-
-  // Filter logic
-  const filterButtons = document.querySelectorAll('#project-filters button');
+  // Project filter
+  const filterBtns = document.querySelectorAll('#project-filters button');
   const projectCards = document.querySelectorAll('#project-grid article');
 
-  filterButtons.forEach(btn => {
+  filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      // Toggle active class
-      filterButtons.forEach(b => {
-        b.classList.remove('bg-blue-600', 'text-white', 'border-blue-600');
-        b.classList.add('border-gray-200', 'dark:border-slate-800');
+      filterBtns.forEach(b => {
+        b.classList.remove('bg-gray-900', 'text-white', 'border-gray-900');
+        b.classList.add('border-gray-200', 'text-gray-600');
       });
-      btn.classList.add('bg-blue-600', 'text-white', 'border-blue-600');
-      btn.classList.remove('border-gray-200', 'dark:border-slate-800');
+      btn.classList.add('bg-gray-900', 'text-white', 'border-gray-900');
+      btn.classList.remove('border-gray-200', 'text-gray-600');
 
-      const filterValue = btn.getAttribute('data-filter');
-
+      const val = btn.getAttribute('data-filter');
       projectCards.forEach(card => {
         const cat = card.getAttribute('data-cat');
-        if (filterValue === 'all' || cat === filterValue) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
+        (card as HTMLElement).style.display = (val === 'all' || cat === val) ? 'flex' : 'none';
       });
     });
   });
 
-  // Contact Form Submission
-  const form = document.getElementById('contact-form');
+  // Contact form — submits to /api/contact (Resend)
+  const form = document.getElementById('contact-form') as HTMLFormElement;
   const toast = document.getElementById('form-toast');
 
   if (form && toast) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      
-      const submitBtn = form.querySelector('button[type="submit"]');
-      if (submitBtn) {
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
+      const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+
+      const nameVal    = (document.getElementById('name')    as HTMLInputElement).value.trim();
+      const emailVal   = (document.getElementById('email')   as HTMLInputElement).value.trim();
+      const messageVal = (document.getElementById('message') as HTMLTextAreaElement).value.trim();
+
+      // Client-side guard
+      if (!nameVal || !emailVal || !messageVal) {
+        toast.className = 'p-3 rounded-lg text-sm bg-red-50 text-red-600 border border-red-100';
+        toast.textContent = 'Please fill in all fields.';
+        toast.classList.remove('hidden');
+        return;
       }
 
-      setTimeout(() => {
-        toast.className = 'p-4 rounded-lg text-sm mb-4 bg-emerald-100 text-emerald-800 border border-emerald-200 dark:bg-emerald-900/30 dark:text-emerald-300 dark:border-emerald-800';
-        toast.textContent = "Got it! I'll reach out via email shortly.";
-        toast.classList.remove('hidden');
+      if (btn) { btn.textContent = 'Sending…'; btn.disabled = true; }
+      toast.classList.add('hidden');
 
-        form.reset();
-        
-        if (submitBtn) {
-          submitBtn.textContent = 'Send Message';
-          submitBtn.disabled = false;
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: nameVal, email: emailVal, message: messageVal }),
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          toast.className = 'p-3 rounded-lg text-sm bg-green-50 text-green-700 border border-green-100';
+          toast.textContent = "Message sent — I'll reply shortly!";
+          toast.classList.remove('hidden');
+          form.reset();
+        } else {
+          toast.className = 'p-3 rounded-lg text-sm bg-red-50 text-red-600 border border-red-100';
+          toast.textContent = data.error || 'Something went wrong. Please try again.';
+          toast.classList.remove('hidden');
         }
-      }, 1000);
+      } catch {
+        toast.className = 'p-3 rounded-lg text-sm bg-red-50 text-red-600 border border-red-100';
+        toast.textContent = 'Network error. Please try again.';
+        toast.classList.remove('hidden');
+      } finally {
+        if (btn) { btn.textContent = 'Send message'; btn.disabled = false; }
+      }
     });
+  }
+
+
+  // Header scroll shadow
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    if (header) header.classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive: true });
+
+  // Section reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          (entry.target as HTMLElement).style.animation = 'fade-up 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards';
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.07 }
+  );
+  revealEls.forEach(el => { (el as HTMLElement).style.opacity = '0'; revealObserver.observe(el); });
+
+  // ── Typewriter for h1 ──
+  const lines = ['I build things with\nPython, AI, and the web.'];
+  const twEl  = document.getElementById('tw-text');
+  const twCur = document.getElementById('tw-cursor');
+  if (twEl) {
+    const fullText = lines[0];
+    let idx = 0;
+    function typeNext() {
+      if (idx <= fullText.length) {
+        // Replace \n with <br>
+        twEl.innerHTML = fullText.slice(0, idx).replace('\n', '<br />');
+        idx++;
+        setTimeout(typeNext, idx < 20 ? 60 : idx < fullText.length ? 55 : 0);
+      } else {
+        // done — keep cursor blinking for 2s then hide it
+        setTimeout(() => { if (twCur) twCur.style.display = 'none'; }, 2000);
+      }
+    }
+    // Small delay so the page settles first
+    setTimeout(typeNext, 300);
   }
 </script>
